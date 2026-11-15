@@ -1,0 +1,36 @@
+{
+  "name": "tekion-loyalty",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Post-purchase loyalty journey orchestrator for Tekion dealers. Next.js (UI + API) on a loopback-only Node server.",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "init": "node scripts/init-env.mjs",
+    "dev": "node --disable-warning=ExperimentalWarning server.ts",
+    "build": "NEXT_TELEMETRY_DISABLED=1 next build",
+    "start": "node --disable-warning=ExperimentalWarning server.ts --prod",
+    "seed": "node --disable-warning=ExperimentalWarning lib/server/cli.ts seed",
+    "eval": "node --disable-warning=ExperimentalWarning lib/server/cli.ts eval",
+    "audit": "node --disable-warning=ExperimentalWarning lib/server/cli.ts audit",
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "lucide-react": "^1.73.0",
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "postcss": "^8.5.33",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^5.9.3"
+  }
+}

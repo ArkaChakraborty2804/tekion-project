@@ -1,0 +1,45 @@
+/* Design system: TekOrbit (dark executive slate + blue accent). Tailwind 4, class-based dark mode. */
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-jakarta), var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  :root {
+    --canvas: #f6f8fb;
+    --surface: #ffffff;
+    --border-subtle: #e2e8f0;
+  }
+  .dark {
+    --canvas: #080b11;
+    --surface: #0e1422;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+  }
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--canvas);
+    letter-spacing: -0.011em;
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+  }
+  :focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+}
+
+@utility font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.22); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.4); }
